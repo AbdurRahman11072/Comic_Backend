@@ -130,11 +130,11 @@ const getAnalytics = async (userId: string) => {
   const dailyRevenue: Record<string, number> = {};
   for (let i = 0; i < 30; i++) {
     const date = new Date(now.getTime() - i * 24 * 60 * 60 * 1000);
-    const key = date.toISOString().split('T')[0];
+    const key = date.toISOString().split('T')[0]!;
     dailyRevenue[key] = 0;
   }
   recentPurchases.forEach(p => {
-    const key = new Date(p.createdAt).toISOString().split('T')[0];
+    const key = new Date(p.createdAt).toISOString().split('T')[0]!;
     if (dailyRevenue[key] !== undefined) {
       dailyRevenue[key] += p.pointsSpent;
     }
