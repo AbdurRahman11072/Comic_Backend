@@ -2,7 +2,7 @@
   "name": "comic_backend",
   "version": "1.0.0",
   "description": "Backend for Genz Toon comic platform",
-  "main": "index.js",
+  "main": "dist/server.js",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
